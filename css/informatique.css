@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #151515;
+    overflow: hidden;
+}
+
+
+.items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+.items .item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+    opacity: 0;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item.active {
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+
+.item.prev {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(-125%, -50%);
+}
+
+.item.next {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(25%, -50%);
+}
+
+.items .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 275px;
+    z-index: 100;
+}
+
+.button-container .button {
+    color: darkorange;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.button-container .button:hover {
+    opacity: 1;
+}
+
+.button-container .button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    z-index: -99;
+}
+
+.button-container .button:nth-child(1) {
+    float: left;
+}
+
+.button-container .button:nth-child(2) {
+    float: right;
+}
+
+
+/*
+Design des fléches
+https://codepen.io/HektorW/pen/eJMMaR
+ */
+
+/* FLECHE DOITE */
+.right {
+    cursor: pointer;
+    height: 18px; /* taille fleche */
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.1s;
+    width: 12px; /* taille fleche */
+    justify-content: center;
+}
+
+.right .arrow-top,
+.right .arrow-bottom {
+    background-color: #666;
+    height: 1.6px; /* epaisseur de la fleche */
+    left: -2px; /* placement de la fleche par rapport a la gauche*/
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.right .arrow-top:after,
+.right .arrow-bottom:after {
+    background-color: darkorange;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s; /* Utilisation directe de la durée */
+}
+
+.right .arrow-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+}
+
+.right .arrow-top:after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+}
+
+.right .arrow-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+.right .arrow-bottom:after {
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s; /* Utilisation directe de la durée */
+}
+
+.right:hover .arrow-top:after {
+    left: 0;
+    transition-delay: 0.15s;
+}
+
+.right:hover .arrow-bottom:after {
+    right: 0;
+    transition-delay: 0s;
+}
+
+.right:active {
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+/* FLECHE GAUCHE */
+
+.left {
+    cursor: pointer;
+    height: 18px; /* taille fleche */
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.1s;
+    width: 12px; /* taille fleche */
+    justify-content: center;
+}
+
+.left .arrow-top,
+.left .arrow-bottom {
+    background-color: #666;
+    height: 1.6px; /* epaisseur de la fleche */
+    left: 2px; /* placement de la fleche par rapport a la gauche */
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.left .arrow-top:after,
+.left .arrow-bottom:after {
+    background-color: darkorange;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s; /* Utilisation directe de la durée */
+}
+
+.left .arrow-top {
+    transform: rotate(-45deg); /* Changement de l'angle de rotation pour pointer vers la gauche */
+    transform-origin: bottom left; /* Modification de l'origine de transformation */
+}
+
+.left .arrow-top:after {
+    right: 100%; /* Inversion de la direction du décalage pour pointer vers la gauche */
+    left: 0; /* Changement de l'emplacement */
+    transition-delay: 0s;
+}
+
+.left .arrow-bottom {
+    transform: rotate(45deg); /* Changement de l'angle de rotation pour pointer vers la gauche */
+    transform-origin: top left; /* Modification de l'origine de transformation */
+}
+
+.left .arrow-bottom:after {
+    right: 0; /* Inversion de la direction du décalage */
+    left: 100%; /* Changement de l'emplacement */
+    transition-delay: 0.15s; /* Utilisation directe de la durée */
+}
+
+.left:hover .arrow-top:after {
+    right: 0; /* Ajustement pour l'animation au survol */
+    transition-delay: 0.15s;
+}
+
+.left:hover .arrow-bottom:after {
+    left: 0; /* Ajustement pour l'animation au survol */
+    transition-delay: 0s;
+}
+
+.left:active {
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+
+
+
+

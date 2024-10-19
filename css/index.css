@@ -1,0 +1,25 @@
+
+
+
+body {
+    background-color: #151515;
+}
+
+.text{
+    margin-top: 60px;
+}
+
+.text img{
+    max-width: 1000px;
+}
+
+.projet{
+    display: flex;
+    justify-content: center;
+}
+
+.projet img{
+    max-height: 300px;
+    max-width: 300px;
+    margin: 20px;
+}
