@@ -95,6 +95,7 @@ body {
 }
 
 
+
 /*
 Design des fléches
 https://codepen.io/HektorW/pen/eJMMaR
@@ -177,6 +178,7 @@ https://codepen.io/HektorW/pen/eJMMaR
     transition: transform 0.1s;
     width: 12px; /* taille fleche */
     justify-content: center;
+    left: 4.8%;
 }
 
 .left .arrow-top,
