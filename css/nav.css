@@ -53,7 +53,7 @@ nav {
     bottom: 0;
 }
 .nav-item:not(.is-active):hover {
-    color: darkorange;
+    color: #FF8732;
 }
 
 /* Stylisons notre indicateur */

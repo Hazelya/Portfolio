@@ -61,7 +61,7 @@ body {
 }
 
 .button-container .button {
-    color: darkorange;
+    color: #FF8732;
     font-size: 32px;
     cursor: pointer;
     position: relative;
@@ -124,7 +124,7 @@ https://codepen.io/HektorW/pen/eJMMaR
 
 .right .arrow-top:after,
 .right .arrow-bottom:after {
-    background-color: darkorange;
+    background-color: #FF8732;
     content: '';
     height: 100%;
     position: absolute;
@@ -193,7 +193,7 @@ https://codepen.io/HektorW/pen/eJMMaR
 
 .left .arrow-top:after,
 .left .arrow-bottom:after {
-    background-color: darkorange;
+    background-color: #FF8732;
     content: '';
     height: 100%;
     position: absolute;
