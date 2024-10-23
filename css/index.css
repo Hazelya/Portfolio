@@ -10,7 +10,8 @@ body {
 }
 
 .text img{
-    max-width: 1000px;
+    max-width: 70%;
+    pointer-events: none;
 }
 
 .projet{
@@ -23,4 +24,27 @@ body {
     max-height: 500px;
     max-width: 500px;
     margin: 25px;
+}
+
+
+/* Pour téléphone et ipad */
+@media(min-height: 800px) {
+
+    .text img{
+        max-width: 110%;
+        pointer-events: none;
+    }
+    .projet{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        padding-left: 10%;
+        margin-top: 10%;
+    }
+    .projet img {
+        justify-content: center;
+        max-width: 70%;
+        margin: 0px;
+    }
+
 }
